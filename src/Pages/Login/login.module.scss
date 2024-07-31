@@ -10,45 +10,11 @@ $lightGray2: #757575;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  border: 1px solid #c7c8c9;
-  border-radius: 4px;
-  padding: 30px;
-  margin: auto;
-  margin-top: 20%;
-  background-color: #ffffff;
-}
-
-.link {
-  text-decoration: none;
-  text-align: right;
-  font-size: 13px;
-  margin-right: 6px;
-  padding-bottom: 15px;
-  color: $lightGray2;
-  :visited {
-    color: $lightGray2;
-  }
-}
-.link:hover {
-  color: #212529;
-}
-
-.btn {
-  width: 100px;
-}
-
-.errorMsg {
-  text-align: center;
-  color: red;
+  justify-content: center;
 }
 
 .copyrightText {
   color: #ffffff;
-  margin-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
 }
