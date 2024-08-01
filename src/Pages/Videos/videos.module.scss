@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.customHeader {
+  display: flex;
+  border: 1px solid black;
+  color: white;
+  background-color: #353335;
+}
+
+.customHeader > tr {
+  margin: 10px 10px;
+  flex: 1;
+}
+
+.customRow {
+  display: flex;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.customRow:hover {
+  background-color: #f8f8f8;
+}
+
+.customRow > tr {
+  margin: 10px 10px;
+  flex: 1;
+}

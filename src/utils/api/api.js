@@ -22,7 +22,6 @@ function queryFromObject(input = {}, leadingMark = false) {
   return result;
 }
 
-// endpoints configuration (remove unused warren endoints, they are only present for sample purpose)
 const EP_CONFIG = {
   accounts: {
     gw_path: 'users-service-api',
@@ -44,33 +43,9 @@ const EP_CONFIG = {
     gw_path: 'users-service-api',
     gw_entity_name: 'groups',
   },
-  issuers: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/issuers',
-  },
-  issuerTypes: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/issuer-types',
-  },
-  news: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/articles',
-  },
-  newsTypes: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/article-types',
-  },
-  performances: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/performances',
-  },
-  authentication: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/authentications',
-  },
-  performanceTypes: {
-    gw_path: 'warren-service-api',
-    gw_entity_name: 'back-office/performance-types',
+  videos: {
+    gw_path: 'main-api',
+    gw_entity_name: 'videos',
   },
 };
 
@@ -163,6 +138,8 @@ export const AuthAPI = {
     return apigw.del('/users-service-api/auth/logout');
   },
 };
+export const VideosAPI = new ResourceManager(EP_CONFIG.videos);
+
 export const GroupsAPI = new ResourceManager(EP_CONFIG.groups);
 GroupsAPI.findAccount = function (id) {
   return apigw.get(`${this.pathWithId(id)}/accounts`).then((accounts) => accounts[0] || null);

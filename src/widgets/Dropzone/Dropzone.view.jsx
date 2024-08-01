@@ -57,7 +57,7 @@ function DropzoneView({ files, addFile, inputMessage, fileType, height, width, v
               files.map((file, i) => {
                 const isPdf = fileType === 'application/pdf';
                 if (isPdf) {
-                  return <PdfViewer file={file} style={thumbsContainer} />;
+                  return <PdfViewer key={i} file={file} style={thumbsContainer} />;
                 } else {
                   return (
                     <img

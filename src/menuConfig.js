@@ -7,6 +7,9 @@ import NotAvailable from './Pages/NotAvailable';
 import Test from './Pages/Test';
 import Home from './Pages/Home';
 import { colors } from './muiColors';
+import { VideoLibrary } from '@material-ui/icons';
+import Videos from './Pages/Videos';
+import VideoEdit from './Pages/VideoEdit';
 
 // import { ROLES } from './models/User/User.constants'; used to restrict menu access
 
@@ -31,6 +34,24 @@ const MENU_ENTRIES = [
     path: '/home',
     icon: <HomeIcon />,
     component: () => <Home />,
+  },
+  {
+    name: 'videos',
+    path: '/videos',
+    icon: <VideoLibrary />,
+    component: () => <Videos />,
+    subItems: [
+      {
+        name: 'edit',
+        path: '/:videoId',
+        component: () => <VideoEdit />,
+      },
+    ],
+    homePage: {
+      displayButton: true,
+      buttonColor: colors.red,
+      icon: <VideoLibrary fontSize="inherit" />,
+    },
   },
   {
     name: 'sampleMenu',
